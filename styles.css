@@ -193,7 +193,7 @@ nav a:hover {
 
 #about{
     width: 90%;
-    margin 20px auto;
+    margin: 20px auto;
 }
 #about h2{
     color: var(--black);
