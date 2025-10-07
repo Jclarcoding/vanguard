@@ -2,77 +2,76 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-<!-- ADD META TAG REQUIRED TO MAKE PAGE RESPONSIVE-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Vanguard- Leading the Future of Success. Premier strategic investment and business acceleration firm for high-growth enterprises.">
     <meta name="keywords" content="business growth, strategic investment, mergers, corporate consulting, digital transformation">
-<!-- ADD META TAG FOR AUTHOR AND YOUR NAME-->
+    <meta name="author" content="Justin Clark">
     <title>Vanguard | Leading the Future of Success</title>
-<!-- ADD LINK TO YOUR CSS-->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
-<!-- WRAP CONTENT IN VALIDATED, SEMANTIC HTML5 (SEE HINTS FOLDER LINKED TO IN THE CANVAS INSTRUCTIONS)-->
     <header>
+        <div class="logo"></div>
         <h1>Vanguard</h1>
         <nav>
-            <h2>Main Navigation</h2>
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="hamburger">☰</label>
             <ul>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
-
-        <main>
-            <section class="Innovation">
+    <main>
+        <section class="Innovation">
+            <div class="innovation-content">
                 <h2>Innovation & Investment</h2>
                 <p>We empower businesses to lead the future with high-impact strategies, market intelligence, and financial solutions that drive success.</p>
-                <a href="#">Request a Consultation</a>
-            </section>
-
-            <section>
-                <h2>Our Expertise. Your Edge.</h2>
-                <p>We redefine success by leveraging AI-driven analytics, market intelligence, and high-yield investment strategies to propel businesses forward. Whether you're looking to scale, optimize, or dominate, our strategic expertise delivers results.</p>
-            </section>
-
-            <section>
-                <h2>What We Offer</h2>
-                <div>
+                <a href="#contact" class="cta-button">Request a Consultation</a>
+            </div>
+        </section>
+        <section class="container" id="about">
+            <h2>Our Expertise. Your Edge.</h2>
+            <p>We redefine success by leveraging AI-driven analytics, market intelligence, and high-yield investment strategies to propel businesses forward. Whether you're looking to scale, optimize, or dominate, our strategic expertise delivers results.</p>
+        </section>
+        <section class="container what-we-offer" id="services">
+            <h2>What We Offer</h2>
+            <div class="offer-grid">
+                <div class="offer-box">
                     <h3>Strategic Growth Consulting</h3>
                     <p>Unlock new revenue streams and optimize market expansion strategies.</p>
                 </div>
-
-                <div>
+                <div class="offer-box">
                     <h3>High-Impact Investment Solutions</h3>
                     <p>Maximize returns with data-driven portfolio management.</p>
                 </div>
-
-                <div>
+                <div class="offer-box">
                     <h3>Business Acceleration & Mergers</h3>
                     <p>Identify opportunities for rapid growth and high-value acquisitions.</p>
                 </div>
-
-                <div>
+                <div class="offer-box">
                     <h3>Digital Transformation</h3>
                     <p>Stay at the forefront of industry advancements with AI, blockchain, and automation.</p>
                 </div>
-
-                <div>
+                <div class="offer-box">
                     <h3>Exclusive Executive Advisory Services</h3>
                     <p>Personalized insights and leadership support for C-suite executives and high-net-worth investors.</p>
                 </div>
-
-                <div>
+                <div class="offer-box">
                     <h3>Corporate Innovation</h3>
-                    <p> Strategic implementation of new ideas, technologies, and processes to drive business growth, enhance competitive advantage, and adapt to evolving market demands.</p>
+                    <p>Strategic implementation of new ideas, technologies, and processes to drive business growth, enhance competitive advantage, and adapt to evolving market demands.</p>
                 </div>
-            </section>
-
-            <section>
-                <h2>Proven Results</h2>
-                <p>Our data-driven strategies have delivered outstanding ROI, leading to significant revenue growth.</p>
-                <div>
+            </div>
+        </section>
+        <section class="container" id="results">
+            <h2>Proven Results</h2>
+            <p>Our data-driven strategies have delivered outstanding ROI, leading to significant revenue growth.</p>
+            <div class="results-container">
+                <div class="results-table">
                     <h3>Profits</h3>
                     <table>
                         <thead>
@@ -88,7 +87,7 @@
                                 <td>$120M</td>
                                 <td>30%</td>
                             </tr>
-                            <tr>
+                            <tr class="charcoal">
                                 <td>2021</td>
                                 <td>$180M</td>
                                 <td>50%</td>
@@ -98,7 +97,7 @@
                                 <td>$250M</td>
                                 <td>70%</td>
                             </tr>
-                            <tr>
+                            <tr class="charcoal">
                                 <td>2023</td>
                                 <td>$340M</td>
                                 <td>85%</td>
@@ -111,11 +110,9 @@
                         </tbody>
                     </table>
                 </div>
-                    
-                <div>
+                <div class="results-graph">
                     <h3>Growth</h3>
-    <!-- CODE PROVIDED FOR YOU, NOTHING TO DO FOR THE BAR CHART IN THE HTML-->
-                    <div  id="bar-chart">
+                    <div id="bar-chart">
                         <div class="bar" data-year="2020" style="--height: 30%;"></div>
                         <div class="bar" data-year="2021" style="--height: 50%;"></div>
                         <div class="bar" data-year="2022" style="--height: 70%;"></div>
@@ -123,55 +120,45 @@
                         <div class="bar" data-year="2024" style="--height: 100%;"></div>
                     </div>
                 </div>
-            </section>
-
-            <section>
+            </div>
+        </section>
+        <section class="contact-section" id="contact">
+            <div class="container">
                 <h3>Contact Us</h3>
-                <p>Want to take your business to the next level? Get in touch with our elite team today.</p>
-                <form action="#" method="post">
-                    <label for="fullname">Full Name</label><br>
-                    <input type="text" id="fullname" name="fullname" required><br><br>
-
-                    <label for="email">Email Address</label><br>
-                    <input type="email" id="email" name="email" required><br><br>
-
-                    <label for="company">Company Name</label><br>
-                    <input type="text" id="company" name="company"><br><br>
-
-                    <label for="industry">Industry</label><br>
-                    <input type="text" id="industry" name="industry"><br><br>
-
-                    <label for="message">How can we help you?</label><br>
-                    <textarea id="message" name="message" rows="5" required></textarea><br><br>
-
-                    <button type="submit">Submit</button>
+                <p>Want to take your business to the next level? Fill out the form below to get in touch with our team of experts.</p>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Full Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="name">Company Name</label>
+                        <input type="text" id="company" name="company" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Industry</label>
+                        <input type="text" id="industry" name="industry" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">Submit</button>
                 </form>
-            </section>
-        </main>
-
-        <footer>
-            <p>&copy;2025 Vanguard. All rights reserved.</p> 
-            <p>Email: <a href="mailto:info@vanguard.com">info@vanguard.com</a></p>
-            <p>Phone: <a href="tel:+14801234567">480.123.4567</a></p>
-        </footer>
-        
-
-
-
-
-
-           
-            
-            
-            
-            
-            
-            
-            
-            
-           
-            
-
-
-
-        
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2025 Vanguard. All Rights Reserved.</p>
+            <p>123 Business Lane, Suite 100, Metropolis, USA 12345</p>
+            <p>Email: info@vanguard.com | Phone: (555) 123-4567</p>
+        </div>
+    </footer>
+</body>
+</html>

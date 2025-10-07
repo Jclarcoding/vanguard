@@ -1,26 +1,11 @@
 /* CSS BY Justin Clark */
-
 /* IMPORTED FONTS*/
-/* IMPORT "INTER" FROM GOOGLE FONTS"
+/* IMPORT "INTER" FROM GOOGLE FONTS" */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
 /* CSS RESET */
-/* http://meyerweb.com/eric/tools/css/reset/
-v2.0 | 20110126
-License: none (public domain)
-*/
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+/* http://meyerweb.com/eric/tools/css/reset/ v2.0 | 20110126 License: none (public domain) */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
     margin: 0;
     padding: 0;
     border: 0;
@@ -28,9 +13,7 @@ time, mark, audio, video {
     font: inherit;
     vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
     display: block;
 }
 body {
@@ -42,8 +25,7 @@ ol, ul {
 blockquote, q {
     quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
+blockquote:before, blockquote:after, q:before, q:after {
     content: '';
     content: none;
 }
@@ -63,99 +45,502 @@ table {
 }
 
 /* GLOBAL STYLES (MOBILE FIRST (SMALL) */
+html{
+    min-width: 400px;
+    font-size: 16px;
+    margin: 0 auto;
+}
+body {
+    font-family: var(--font);
+    background-color: var(--white);
+    margin: 0;
+    padding: 0;
+}
 
-/* MIN-WIDTH OF THE PAGE SHOULD NOT GO BELOW 400PX */
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to bottom, var(--black) 90%, var(--blue));
+    padding: 10px 20px;
+    color: white;
+    width: 100%;
+    box-sizing: border-box;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
 
-/* ADD A DIV WITH THE CLASS OF CONTAINER TO EVERY CONTENT CONTAINER THIS IS ALLOW THE BASE ELEMENTS TO BE 100% WIDTH, BUT CONSTRAIN THE ACTUAL CONTENT TO 90% */
+.logo {
+    left: -0.5rem;
+    width: 3.75rem;
+    height: 3.75rem;
+    background: url('images/vanguard-logo.svg') no-repeat center/contain;
+}
+
+h1 {
+    color: var(--blue);
+    font-weight: 700;
+}
+
+nav {
+    display: flex;
+    margin-left: auto;
+}
+
+nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: var(--black);
+    width: 100px;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+nav a {
+    color: var(--blue);
+    text-decoration: none;
+    font-weight: 700;
+    padding: 5px 10px;
+    transition: var(--charcoal) 0.4s ease;
+}
+
+nav a:hover {
+    color: var(--charcoal);
+}
+
+#menu-toggle {
+  display: none;
+}
+
+#menu-toggle:checked + .hamburger + ul {
+    display: flex;
+    flex-direction: column;
+}
+
+/* .hamburger {
+    display: block;
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+    position: relative;
+    background-color: var(--black);
+} */
+
 .container {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 20px 0;
 }
 
-/* ADD TO "INNOVATION & INVESTMENT SECTION (Photo by Kevin Matos on Unsplash) */
- section .Innovation{
+.Innovation {
     background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('images/vanguard-hero.jpg') no-repeat center center/cover;
     height: 80vh;
-    display: grid;
-    place-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     padding: 1rem;
     overflow: hidden;
+    position: relative;
 }
 
-/* ADD FLOATING SVG LOGO BEFORE THE H1 */
- {
-    content: "";
-
-    left:-.5rem;
-    width: 3.75rem;
-    height: 3.75rem;
-    background: url('images/vanguard-logo.svg') no-repeat center/contain;
-
+.innovation-content {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    max-width: 600px;
+    width: 90%;
 }
-/* THIS ONE IS DONE FOR YOU */
+
+.innovation-content h2,
+.innovation-content p {
+    margin: 10px 0;
+}
+
+.innovation-content h2 {
+    color: var(--white);
+    font-size: 2rem;
+    font-weight: bolder;
+    margin-bottom: 30px;
+}
+
+.innovation-content p {
+    font-size: 0.8rem;
+    line-height: 1.5;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--blue);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+}
+
+#about{
+    width: 90%;
+    margin 20px auto;
+}
+#about h2{
+    color: var(--black);
+    font-weight: bolder;
+    font-size: 1.8rem;
+    text-align: left;
+    margin-top: 50px;
+}
+
+#about p{
+    margin-top: 50px;
+}
+
+
+.what-we-offer h2 {
+    font-size: 1.8rem;
+    font-weight: bolder;
+    color: var(--black);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.offer-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.offer-box {
+    background-color: var(--blue);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.offer-box h3 {
+    color: var(--white);
+    font-size: 1.2rem;
+    font-weight: bolder;
+    margin-bottom: 20px;
+}
+
+.results-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: stretch;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#results{
+    background-color: var(--blue);
+    width: 100%;
+}
+
+#results h2 {
+    color: var(--white);
+    background-color: var(--blue);
+    font-weight: bolder;
+    font-size: 1.8rem;
+    width: 90%;
+    margin: 30px 0 0 40px;
+}
+
+#results h3 {
+    color: var(--white);
+    background-color: var(--blue);
+    font-weight: bolder;
+    font-size: 1.2rem;
+    width: 90%;
+    margin-left: 40px;
+    margin-top: 20px;
+}
+
+#results p {
+    color: var(--white);
+    background-color: var(--blue);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    width: 90%;
+    margin-left: 40px;
+    margin-top: 30px;
+}
+
+.results-table {
+    margin: 0 auto;
+}
+
+.results-table table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+.results-table th, .results-table td {
+    border: 1px solid var(--charcoal);
+    background-color: var(--black);
+    color: var(--white);
+    padding: 10px;
+    text-align: left;
+}
+
+.results-table tr.charcoal td {
+    background-color: var(--charcoal);
+}
+
 #bar-chart {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(5, minmax(60px, 1fr));
     align-items: flex-end;
-    justify-content: space-around;
+    justify-content: center;
     gap: 1rem;
-    height: 300px;
-    width: 100%;
+    height: 200px;
+    width: 90%;
+    max-width: none;
     max-width: 800px;
     padding: 1rem;
+    margin: 0 auto;
     position: relative;
 }
-/* ADD ON TRANSITION ON HEIGHT */
+
 .bar {
-    width: 50px;
+    width: 100%;
     background: var(--charcoal);
-    border-radius: 10px;
+    border-radius: 10px 10px 0 0;
     position: relative;
-    transition: ;
+    transition: height 1s ease-in-out;
     height: 0;
 }
-/* THIS ONE IS DONE FOR YOU */
+
 .bar::after {
     content: attr(data-year);
     position: absolute;
     bottom: -25px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 1rem;
+    font-size: 0.7rem;
     font-weight: bold;
     color: var(--white);
+    white-space: nowrap;
 }
+
 @keyframes stepUp {
-    0% {
-        height: 0;
-    }
-    100% {
-        height: var(--height);
-    }
+    0% { height: 0; }
+    100% { height: var(--height); }
 }
-/* ADD ANIMATION ON stepUp for 1s ease-in-out forwards */
+
 .bar {
     animation: stepUp 1s ease-in-out forwards;
 }
 
+.contact-section {
+    background-color: var(--black);
+    color: white;
+    padding: 40px 0;
+}
 
-/* MEDIA QUERIES (MEDIUM) */ 
+#contact h3 {
+    font-size: 1.8rem;
+    font-weight: bolder;
+    text-align: left;
+}
 
-    #results {
-        grid-template-columns: 1fr 1fr;
+#contact p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    text-align: left;
+    margin-top: 40px;
+}
+
+.contact-section h3, .contact-section p {
+    color: white;
+    text-align: center;
+}
+
+.contact-section form {
+    width: 60%;
+    margin: 20px auto;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.submit-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: var(--blue);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    background-color: var(--black);
+    color: var(--white);
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-content p {
+    margin: 5px 0;
+}
+
+/* MEDIA QUERIES (MEDIUM) */
+@media all and (min-width: 800px) {
+    
+    .hamburger {
+        display: none;
     }
+
+    #menu-toggle{
+        display: none;
+    }
+
+    nav {
+    display: flex;
+    margin-left: auto;
+    }
+
+    nav ul {
+        display: flex !important;   
+        flex-direction: row;
+        gap: 20px;
+        position: sticky;           
+        background: none;           
+        box-shadow: none;           
+        width: auto;
+        padding: 0;
+    }
+
+    nav a {
+        color: var(--blue);
+        text-decoration: none;
+        font-weight: 700;
+        padding: 5px 10px;
+        transition: var(--charcoal) 0.3s ease;
+    }
+
+    nav a:hover {
+        color: var(--blue);
+    }
+
     .results-container {
         flex-direction: row;
         justify-content: space-between;
-    }
-    .results-table {
-        width: 50%;
-    }
-    .bar-chart {
-        width: 50%;
+}
+
+    .results-table, .results-graph {
+        width: 45%;
     }
 
+    #bar-chart {
+        gap: 1rem; /* more spacing */
+  }
+
+    .bar::after {
+        font-size: 0.9rem;
+        bottom: -25px;
+  }
+}
 
 /* MEDIA QUERIES (LARGE) */
+@media all and (min-width: 1200px) {
+    
+    .hamburger {
+        display: none;
+    }
+
+    #menu-toggle{
+        display: none;
+    }
+
+    nav {
+        display: flex;
+        margin-left: auto;
+}
+
+    nav ul {
+        display: flex;
+        gap: 20px;
+}
+
+    nav a {
+        color: var(--blue);
+        text-decoration: none;
+        font-weight: 700;
+        padding: 5px 10px;
+        transition: var(--charcoal) 0.3s ease;
+}
+
+    nav a:hover {
+        color: var(--blue);
+}
+    
+    .offer-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    
+    form {
+        display: grid;
+        grid-template-columns: 1fr 1fr; 
+        gap: 20px;
+    }
+
+    
+    .submit-button {
+        justify-self: end;
+        align-self: start;
+    }
+
+    #bar-chart {
+         max-width: 1000px;
+         gap: 2rem;
+  }
+
+    .bar::after {
+        font-size: 1rem;
+  }
+}
+
+
